@@ -26,7 +26,7 @@ namespace ConsoleApp4
             string client_secret = ConfigurationManager.AppSettings["client_secret"];
             ChatRemoveHelper cr = new ChatRemoveHelper(client_id, client_secret);
             cr.RemoveMembers("19:77762a2c48c0419c90e44293666413bf@thread.v2");
-
+            //https://teams.microsoft.com/_#/conversations/19:77762a2c48c0419c90e44293666413bf@thread.v2?ctx=chat
 
             Console.ReadKey();
 
