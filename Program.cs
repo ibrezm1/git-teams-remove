@@ -10,6 +10,8 @@ using RestSharp;
 // Need to add reference to system.web.Externsions
 using System.Text.Json.Serialization;
 using System.Web;
+using System.Configuration;
+// Add reference to configuration
 
 // https://stackoverflow.com/questions/10226089/restsharp-simple-complete-example
 namespace ConsoleApp4
@@ -20,8 +22,9 @@ namespace ConsoleApp4
     {
         public static void Main()
         {
-
-            ChatRemoveHelper cr = new ChatRemoveHelper("787997e6-1a3d-4470-bc84-67bdc80b1aaa", "bki8Q~FdcGpSnZ2Aq_uiusxQPd7xea63WI~06bxc");
+            string client_id = ConfigurationManager.AppSettings["client_id"];
+            string client_secret = ConfigurationManager.AppSettings["client_secret"];
+            ChatRemoveHelper cr = new ChatRemoveHelper(client_id, client_secret);
             cr.RemoveMembers("19:77762a2c48c0419c90e44293666413bf@thread.v2");
 
 

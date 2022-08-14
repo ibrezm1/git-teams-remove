@@ -29,7 +29,7 @@ namespace ConsoleApp4
 
             var request = new RestRequest("170f95e3-de76-4073-8222-7574715537b5/oauth2/token", Method.Post);
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-            request.AddHeader("Cookie", "fpc=ArPq__3fHnpBob8pAW5daE2fRkgiAQAAAJwFidoOAAAA; stsservicecookie=estsfd; x-ms-gateway-slice=estsfd");
+            //request.AddHeader("Cookie", "fpc=ArPq__3fHnpBob8pAW5daE2fRkgiAQAAAJwFidoOAAAA; stsservicecookie=estsfd; x-ms-gateway-slice=estsfd");
             request.AddParameter("grant_type", "client_credentials");
             request.AddParameter("client_id", "787997e6-1a3d-4470-bc84-67bdc80b1aaa");
             request.AddParameter("client_secret", "bki8Q~FdcGpSnZ2Aq_uiusxQPd7xea63WI~06bxc");
