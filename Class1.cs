@@ -83,6 +83,21 @@ namespace ConsoleApp4
 
             }
 
+            // Getting Chats 
+            callurl = String.Format("v1.0/teams/e0cf5f00-6b19-404c-a65c-8dd44cbe899e/channels/19:e0edaa5c577b4253b7c0cc049e3cf593@thread.tacv2/messages", chatid);
+            request = new RestRequest(callurl, Method.Post);
+            request.AddHeader("Authorization", btoken);
+            request.AddHeader("Content-type", "application/json");
+            request.AddParameter(
+               "application/json",
+               "{ \"body\": {\"content\": \"Hello\" } }", // <- your JSON string
+               ParameterType.RequestBody);
+            //request.AddJsonBody(chatMessage); // AddJsonBody serializes the object automatically
+            // https://stackoverflow.com/questions/31937939/restsharp-post-a-json-object
+            response = client.Execute(request);
+            Console.WriteLine(response.Content);
+            jsontext = response.Content;
+
             //https://docs.microsoft.com/en-us/graph/api/participant-delete?view=graph-rest-1.0&tabs=http
 
 

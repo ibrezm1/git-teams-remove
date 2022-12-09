@@ -11,3 +11,13 @@
 ```
 {"error":{"code":"Forbidden","message":"Missing role permissions on the request. API requires one of 'ChatMember.ReadWrite.All, Chat.ReadWrite.All, Chat.Manage.Chat'. Roles on the request 'TeamMember.ReadWriteNonOwnerRole.All, ChatMessage.Read.All, Files.ReadWrite.All, TeamMember.ReadWrite.All, Chat.Read.All, ChatMember.Read.All, Chat.Create'. Resource specific consent grants on the request ''.","innerError":{"date":"2022-12-09T20:51:32","request-id":"041f6052-8cf1-4ae4-8c2c-51035300b481","client-request-id":"041f6052-8cf1-4ae4-8c2c-51035300b481"}}}
 ```
+* [teams help](https://learn.microsoft.com/en-us/graph/api/chatmessage-post?view=graph-rest-1.0&tabs=http)
+
+
+
+https://teams.microsoft.com/l/channel/
+19:e0edaa5c577b4253b7c0cc049e3cf593@thread.tacv2/General?
+groupId=e0cf5f00-6b19-404c-a65c-8dd44cbe899e&
+tenantId=170f95e3-de76-4073-8222-7574715537b5
+
+https://graph.microsoft.com/v1.0/teams/e0cf5f00-6b19-404c-a65c-8dd44cbe899e/channels/19:e0edaa5c577b4253b7c0cc049e3cf593@thread.tacv2/messages
