@@ -29,7 +29,7 @@ namespace ConsoleApp4
             string tenant = ConfigurationManager.AppSettings["tenant"];
 
             ChatRemoveHelper cr = new ChatRemoveHelper(client_id, client_secret, tenant);
-            cr.RemoveMembers("19:77762a2c48c0419c90e44293666413bf@thread.v2");
+            cr.RemoveMembers("19:5612f725c75f4276aff39cfa34b5765b@thread.v2");
             //https://teams.microsoft.com/_#/conversations/19:77762a2c48c0419c90e44293666413bf@thread.v2?ctx=chat
 
             Console.ReadKey();
