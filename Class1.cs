@@ -15,11 +15,12 @@ namespace ConsoleApp4
 {
     class ChatRemoveHelper
     {
-        string client_id, client_secret;
-        public ChatRemoveHelper(string client_id, string client_secret)
+        string client_id, client_secret, tenant;
+        public ChatRemoveHelper(string client_id, string client_secret, string tenant)
         {
             this.client_id = client_id;
             this.client_secret = client_secret;
+            this.tenant = tenant;
         }
 
         string GenerateToken()
@@ -27,15 +28,15 @@ namespace ConsoleApp4
             var ser = new System.Web.Script.Serialization.JavaScriptSerializer();
             var client = new RestClient("https://login.microsoftonline.com");
 
-            var request = new RestRequest("170f95e3-de76-4073-8222-7574715537b5/oauth2/token", Method.Post);
+            var request = new RestRequest(tenant + "/oauth2/token", Method.Post);
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
             //request.AddHeader("Cookie", "fpc=ArPq__3fHnpBob8pAW5daE2fRkgiAQAAAJwFidoOAAAA; stsservicecookie=estsfd; x-ms-gateway-slice=estsfd");
             request.AddParameter("grant_type", "client_credentials");
-            request.AddParameter("client_id", "787997e6-1a3d-4470-bc84-67bdc80b1aaa");
-            request.AddParameter("client_secret", "bki8Q~FdcGpSnZ2Aq_uiusxQPd7xea63WI~06bxc");
+            request.AddParameter("client_id", client_id );
+            request.AddParameter("client_secret", client_secret);
             request.AddParameter("resource", "https://graph.microsoft.com");
 
-
+            //RestResponse response = null;
             RestResponse response = client.Execute(request);
             //Console.WriteLine(response.Content);
             var jsontext = response?.Content;

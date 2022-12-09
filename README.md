@@ -5,3 +5,5 @@
 * Validate Framework [installed](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed)
 * dotnet restore 
 * [Package reference format](https://stackoverflow.com/questions/60089760/cant-restore-nuget-packages-in-framework-4-7-2) follow one format else restore will not work
+* [Link to test teams](https://teams.microsoft.com/_?tenantId=170f95e3-de76-4073-8222-7574715537b5)
+* Delete and recreate the secret every time

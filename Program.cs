@@ -22,14 +22,43 @@ namespace ConsoleApp4
     {
         public static void Main()
         {
+
+            ReadSettings();
             string client_id = ConfigurationManager.AppSettings["client_id"];
             string client_secret = ConfigurationManager.AppSettings["client_secret"];
-            ChatRemoveHelper cr = new ChatRemoveHelper(client_id, client_secret);
+            string tenant = ConfigurationManager.AppSettings["tenant"];
+
+            ChatRemoveHelper cr = new ChatRemoveHelper(client_id, client_secret, tenant);
             cr.RemoveMembers("19:77762a2c48c0419c90e44293666413bf@thread.v2");
             //https://teams.microsoft.com/_#/conversations/19:77762a2c48c0419c90e44293666413bf@thread.v2?ctx=chat
 
             Console.ReadKey();
 
         }
+        public static void ReadSettings()
+        {
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+
+                if (appSettings.Count == 0)
+                {
+                    Console.WriteLine("AppSettings is empty.");
+                }
+                else
+                {
+                    foreach (var key in appSettings.AllKeys)
+                    {
+                        Console.WriteLine("Key: {0} Value: {1}", key, appSettings[key]);
+                    }
+                }
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error reading app settings");
+            }
+        }
     }
+
+ 
 }
