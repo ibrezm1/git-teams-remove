@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <appSettings>
-    <add key="client_id" value="testid" />
-    <add key="client_secret" value="testsec" />
-  </appSettings>
-</configuration>
